@@ -1,0 +1,82 @@
+.vehiculos-desplegable{
+    position:fixed;
+    top:91px;
+    left:0;
+    width:100%;
+    background:#fff;
+    z-index:9999;
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    border-top:1px solid #ddd;
+
+}
+
+.vehiculos-tabs{
+    display:flex;
+    gap:30px;
+
+    background:#efefef;
+
+    padding:15px 6%;
+}
+
+.vehiculos-tab{
+    background:none;
+    border:none;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    color:#444;
+}
+
+.vehiculos-tab.activo{
+
+    font-weight:bold;
+
+    border-bottom:3px solid black;
+}
+
+.vehiculos-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    padding:35px 6%;
+}
+
+.vehiculo-card{
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.vehiculo-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.vehiculo-card img{
+
+    width:100%;
+
+    max-width:280px;
+
+}
+
+.vehiculo-card h3{
+
+    margin-top:15px;
+
+}
+
+.vehiculo-card p{
+
+    color:#666;
+
+}

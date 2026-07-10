@@ -1,0 +1,86 @@
+.taller-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+/* Imagen lateral */
+.taller-image {
+  flex: 1 1 500px;
+  min-height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease-out;
+}
+
+/* Contenido de texto */
+.taller-content {
+  flex: 1 1 500px;
+  padding: 5rem 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.taller-content h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-yellow);
+  font-weight: 700;
+}
+
+.taller-content p {
+  color: #e2e8f0; /* gris claro para contraste */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Botón */
+.taller-btn {
+  align-self: flex-start;
+  background-color: var(--secondary-yellow);
+  color: var(--primary-blue);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.taller-btn:hover {
+  background-color: var(--white);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .taller-section {
+    flex-direction: column;
+  }
+  .taller-content {
+    padding: 2rem;
+    text-align: center;
+  }
+  .taller-btn {
+    align-self: center;
+  }
+}

@@ -1,0 +1,141 @@
+.showroom-section {
+  padding: 5rem 8%;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+/* Encabezado */
+.showroom-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.showroom-header h2 {
+  font-size: 2.4rem;
+  color: var(--primary-blue);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.showroom-header p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Grid de modelos */
+.showroom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Tarjetas */
+.showroom-card {
+  background-color: var(--bg-light);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.showroom-card:nth-child(1) { animation-delay: 0.2s; }
+.showroom-card:nth-child(2) { animation-delay: 0.4s; }
+.showroom-card:nth-child(3) { animation-delay: 0.6s; }
+
+.showroom-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  border: 2px solid var(--secondary-yellow);
+  cursor: pointer;
+}
+
+/* Imagen */
+.showroom-img {
+  height: 220px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}
+
+.showroom-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.showroom-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Información */
+.showroom-info {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showroom-info h3 {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.showroom-info p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+/* Botón */
+.showroom-btn {
+  background-color: var(--secondary-yellow);
+  color: var(--primary-blue);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.showroom-btn:hover {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .showroom-section {
+    padding: 3rem 5%;
+  }
+
+  .showroom-header h2 {
+    font-size: 2rem;
+  }
+
+  .showroom-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .showroom-btn {
+    width: 100%;
+  }
+}
