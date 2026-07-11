@@ -1,0 +1,343 @@
+/* ==========================================================================
+   PÁGINA DE PROMOCIONES - ECUAAUTO CHEVROLET (UI/UX PREMIUM)
+   ========================================================================== */
+
+/* Modificación del contenedor principal para acoplar el carrusel */
+.promociones-page-container {
+  padding: 0 !important; /* Forzar la eliminación de rellenos que causan los bordes blancos */
+  margin: 0;
+  width: 100%;
+  background-color: #f8fafc;
+  min-height: 85vh;
+}
+
+/* Devuelve el relleno de lectura solo a la sección de las tarjetas */
+.promociones-content-wrapper {
+  padding: 4rem 6%; 
+  max-width: 1200px;
+  margin: 0 auto; /* Centra el catálogo de forma simétrica */
+  box-sizing: border-box;
+}
+/* ==========================================================================
+   ESTILOS DEL CARRUSEL DE PROMOCIONES (PANTALLA COMPLETA PARCIAL)
+   ========================================================================== */
+.promo-carrusel-section {
+  position: relative;
+  width: 100vw; /* Utiliza el 100% del ancho de la ventana gráfica */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw; /* Truco de CSS para romper contenedores padres si es necesario */
+  height: auto;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: 0; /* Pega el video/imagen directamente bajo la línea azul */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.carrusel-slide {
+  width: 100%;
+}
+
+.carrusel-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Adapta la imagen simulando un banner gigante */
+  display: block;
+}
+
+
+@keyframes fadeInEffect {
+  from { opacity: 0.75; }
+  to { opacity: 1; }
+}
+
+/* Botones laterales de control de flechas */
+.carrusel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 16px 12px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 0 4px 4px 0;
+}
+
+.carrusel-control.next {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.carrusel-control:hover {
+  background: #FFCC00; /* Feedback interactivo con el amarillo de la empresa */
+  color: #002855;
+}
+
+/* Puntos indicadores inferiores (Dots) */
+.carrusel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carrusel-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.carrusel-dot:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* El dot activo se ensancha y toma el color amarillo corporativo */
+.carrusel-dot.activo {
+  background-color: #FFCC00;
+  width: 28px; /* Efecto píldora moderno expandido */
+  border-radius: 5px;
+}
+
+/* Responsividad para ajustar el alto del carrusel en pantallas pequeñas */
+@media (max-width: 768px) {
+  .carrusel-control {
+    padding: 10px 8px;
+    font-size: 1rem;
+  }
+  .carrusel-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .carrusel-dot.activo {
+    width: 20px;
+  }
+}
+
+
+
+
+.promociones-page-container {
+  padding: 4rem 6%;
+  background-color: #f8fafc; /* Gris claro institucional de fondo */
+  min-height: 85vh;
+}
+
+/* Encabezado Principal */
+.promociones-header {
+  text-align: left; /* Alineado a la izquierda para mantener la seriedad de marca */
+  margin-bottom: 3.5rem;
+  border-bottom: 2px solid #edf2f7;
+  padding-bottom: 15px;
+  max-width: 1200px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.promociones-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #003b70; /* Azul oscuro corporativo */
+  letter-spacing: -0.5px;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+}
+
+.promociones-header h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #FFCC00; /* Detalle de acento amarillo */
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.promociones-header p {
+  font-size: 1.05rem;
+  color: #64748b; /* Gris suavizado de alta legibilidad */
+  line-height: 1.5;
+}
+
+/* Rejilla Adaptable de Ofertas */
+.promociones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas estables */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de Oferta Individual (Estructura de Bloque Oficial GM) */
+.promo-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px; /* Esquinas corporativas uniformes */
+  overflow: hidden; /* Corta los desbordamientos de la cabecera */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* Efecto de elevación al posar el cursor */
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Cabecera de la Tarjeta: Franja Amarilla Sólida Corporativa */
+.promo-card-header {
+  background-color: #FFCC00; /* Amarillo Chevrolet */
+  padding: 14px 20px;
+  text-align: left;
+}
+
+.promo-card-header h3 {
+  color: #002855; /* Azul oscuro de alto contraste */
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Contenedor de Medios / Imágenes */
+.promo-card-media {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.promo-card-media img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Microinteracción de zoom elegante al pasar el mouse por la tarjeta */
+.promo-card:hover .promo-card-media img {
+  transform: scale(1.05);
+}
+
+/* Cuerpo de la Tarjeta */
+.promo-card-body {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Empuja los elementos de forma uniforme */
+  text-align: left;
+}
+
+/* Texto de la Oferta Comercial destacada */
+.promo-card-body h4 {
+  color: #1e293b;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.3px;
+}
+
+/* Bloque de Etiquetas / Tags */
+.promo-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* Óvalos de Categorías Estilizados */
+.promo-tag {
+  background-color: #e2e8f0;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Filtro específico para resaltar el nombre del modelo */
+.promo-tag.model-tag {
+  background-color: rgba(255, 204, 0, 0.15); /* Amarillo translúcido elegante */
+  color: #b45309; /* Tono ocre legible */
+  border: 1px solid rgba(255, 204, 0, 0.4);
+}
+
+/* Botón Cotiza Ya Rectangular Corporativo Mínimalista */
+.btn-cotiza-ya {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #FFCC00; /* Contorno de firma en amarillo */
+  padding: 14px 20px;
+  border-radius: 4px; /* Formato rectangular a juego con el estilo de ofertas */
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  text-align: left; /* Alineado a la izquierda */
+  margin-top: auto; /* Fuerza la alineación al piso de la tarjeta */
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+/* Efecto Hover: Relleno total sólido en amarillo */
+.btn-cotiza-ya:hover {
+  background-color: #FFCC00;
+  color: #002855;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+}
+
+/* Añade la microflecha interactiva clásica mediante pseudoelemento CSS */
+.btn-cotiza-ya::after {
+  content: '➝';
+  position: absolute;
+  right: 20px;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-cotiza-ya:hover::after {
+  transform: translateX(4px); /* Pequeño empuje UX hacia la derecha */
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD Y ADAPTACIÓN DISPOSITIVOS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .promociones-page-container {
+    padding: 2rem 4%;
+  }
+
+  .promociones-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .promociones-header h1::after {
+    margin: 10px auto 0 auto;
+  }
+
+  .promociones-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

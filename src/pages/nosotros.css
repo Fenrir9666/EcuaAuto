@@ -1,495 +1,364 @@
-/* CONTENEDOR GENERAL */
+/* ==========================================================================
+   PÁGINA ACERCA DE NOSOTROS - ECUAAUTO (UI/UX PREMIUM)
+   ========================================================================== */
 
-.nosotros-page{
+.nosotros-page {
+  background-color: #ffffff;
+  width: 100%;
+}
 
-    font-family: Arial, sans-serif;
+/* --- SECCIÓN HERO INMERSIVO --- */
+/* --- SECCIÓN HERO INMERSIVO --- */
+.nosotros-hero {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 6%;
+  box-sizing: border-box;
+  background:
+    linear-gradient(rgba(0, 20, 40, 0.6), rgba(0, 0, 0, 0.7)),
+    url("../assets/somos.png") center/cover no-repeat;
+  color: #ffffff;
+  margin-top: -4px;
+}
 
+/* Título principal en amarillo */
+.nosotros-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.nosotros-hero h1 .text-yellow {
+  color: #FFCC00;
+}
+
+/* Texto descriptivo en blanco */
+.nosotros-hero p {
+  max-width: 750px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.95;
+  margin: 0 auto;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 
-/* HERO */
-
-.nosotros-hero{
-
-    min-height:500px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:80px 10%;
-
-
-    background:
-
-    linear-gradient(
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.55)
-    ),
-
-    url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1400")
-    center/cover;
-
-
-    color:white;
-
+/* --- SECCIÓN HISTORIA CORPORATIVA (DISEÑO DIVIDIDO) --- */
+.historia {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 5rem 6%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-
-
-
-.nosotros-hero h1{
-
-    font-size:55px;
-
-    margin-bottom:20px;
-
-}
-
-
-
-.nosotros-hero p{
-
-    max-width:800px;
-
-    font-size:20px;
-
-    line-height:1.6;
-
-}
-
-
-
-/* SECCION HISTORIA */
-
-
-.nosotros-info{
-
-    padding:70px 10%;
-
-    background:white;
-
-    text-align:center;
-
-}
-
-
-
-.nosotros-info h2{
-
-    color:#0077C8;
-
-    font-size:35px;
-
-}
-
-
-
-.nosotros-cards{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-    margin-top:40px;
-
-}
-
-
-
-.nosotros-card{
-
-
-    background:#f5f7fa;
-
-    padding:30px;
-
-    border-radius:15px;
-
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.1);
-
-
-    transition:.3s;
-
-}
-
-
-
-.nosotros-card:hover{
-
-    transform:translateY(-10px) scale(1.03);
-
-    box-shadow:
-
-    0 15px 35px rgba(0,0,0,.18);
-
-}
-
-
-
-.nosotros-card h3{
-
-    color:#003b70;
-
-}
-
-
-
-/* MAPA */
-
-
-.ubicacion{
-
-    padding:70px 10%;
-
-    background:#f4f4f4;
-
-    text-align:center;
-
-}
-
-
-
-.ubicacion h2{
-
-    color:#0077C8;
-
-    font-size:35px;
-
-}
-
-
-
-
-
-.ubicacion-contenido{
-
-    display:flex;
-
-    gap:40px;
-
-    align-items:center;
-
-    margin-top:40px;
-
-}
-
-
-
-
-
-.mapa{
-
-    flex:2;
-
-    height:420px;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.15);
-
-}
-
-
-
-
-
-.mapa iframe{
-
-    width:100%;
-
-    height:100%;
-
-    border:0;
-
-}
-
-
-
-
-
-.datos-ubicacion{
-
-    flex:1;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.12);
-
-    text-align:left;
-
-}
-
-
-
-
-
-.datos-ubicacion h3{
-
-    color:#0077C8;
-
-    font-size:28px;
-
-    margin-bottom:20px;
-
-}
-
-.datos-ubicacion p{
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    color:#555;
-
-}
-
-.historia{
-
-display:flex;
-
-align-items:center;
-
-gap:50px;
-
-padding:80px 10%;
-
-background:white;
-
-}
-
-
-
-.historia-imagen{
-
-flex:1;
-
-}
-
-
-
-.historia-imagen img{
-
-width:100%;
-
-border-radius:20px;
-
-box-shadow:
-0 15px 30px rgba(0,0,0,.2);
-
-}
-
-
-
-.historia-texto{
-
-flex:1;
-
-}
-
-
-
-.historia-texto h2{
-
-font-size:38px;
-
-color:#0077C8;
-
-}
-
-
-
-.historia-texto p{
-
-font-size:18px;
-
-line-height:1.7;
-
-color:#555;
-
-}
-/* =========================
-   ANIMACIONES NOSOTROS
-========================= */
-
-
-/* Entrada general */
-
-@keyframes aparecer {
-
-    from {
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-
-
-
-/* HERO */
-
-.nosotros-hero div {
-
-    animation:
-
-    aparecer 1s ease forwards;
-
-}
-
-
-
-
-
-/* HISTORIA IMAGEN */
 
 .historia-imagen {
-
-    animation:
-
-    entrarIzquierda 1s ease forwards;
-
+  flex: 1;
 }
 
-
-
-
-
-@keyframes entrarIzquierda {
-
-
-    from {
-
-        opacity:0;
-
-        transform:translateX(-80px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
+.historia-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: block;
 }
-
-
-
-
-
-/* HISTORIA TEXTO */
-
 
 .historia-texto {
-
-    animation:
-
-    entrarDerecha 1s ease forwards;
-
+  flex: 1;
+  text-align: left;
 }
 
-
-
-
-
-@keyframes entrarDerecha {
-
-
-    from {
-
-        opacity:0;
-
-        transform:translateX(80px);
-
-    }
-
-
-    to {
-
-        opacity:1;
-
-        transform:translateX(0);
-
-    }
-
+.historia-texto h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #003b70; /* Azul oscuro corporativo */
+  margin-bottom: 1.5rem;
 }
 
+/* Línea de firma amarilla Chevrolet */
+.historia-texto h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #FFCC00;
+  margin-top: 10px;
+  border-radius: 2px;
+}
 
+.historia-texto p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475569; /* Gris pizarra de alta lectura */
+  margin-bottom: 1.2rem;
+}
 
+/* --- SECCIÓN VALORES Y PILARES (TARJETAS) --- */
+/* ==========================================================================
+   SECCIÓN VALORES CON IMAGEN DE FONDO (PANTALLA COMPLETA EDGE-TO-EDGE)
+   ========================================================================== */
+.nosotros-info {
+  position: relative;
+  /* INTEGRADO: Cargamos tu imagen local de la sucursal desde assets */
+  background-image: url('../assets/ChevroIlalo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 18rem 6% 6rem 6%;/* Más aire vertical para lucir el asset */
+  width: 100%;
+  min-height: 550px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
+/* Filtro oscuro para amortiguar el brillo de la foto y potenciar la UI */
+.nosotros-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 20, 40, 0.20); /* Tono azul/negro profundo que amarra la paleta */
+  z-index: 1;
+}
 
-/* TARJETAS */
+/* Contenedor del contenido sobre el filtro */
+.nosotros-info-content {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
 
+/* Título de la sección adaptado para fondo oscuro */
+.nosotros-info-content h2 {
+  color: #ffffff; /* Cambiado a blanco para máximo contraste */
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
 
+.nosotros-info-content h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #FFCC00; /* Línea de acento amarillo de la marca */
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Rejilla de Tarjetas */
+.nosotros-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 5rem;
+}
+
+/* Tarjetas individuales de cristal esmerilado (Glassmorphism de alta gama) */
 .nosotros-card {
+  background: rgba(255, 255, 255, 0.95); /* Blanco sólido con sutil transparencia */
+  padding: 35px 25px;
+  border-radius: 12px;
+  text-align: left;
+  box-sizing: border-box;
+  border-left: 4px solid #0077C8; /* Línea guía azul original de tu diseño */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: aparecer 0.6s ease forwards;
+}
 
+/* Efecto hover interactivo unificado */
+.nosotros-card:hover {
+  transform: translateY(-6px);
+  border-color: #FFCC00; /* Cambia dinámicamente al amarillo de la empresa */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
 
-    animation:
+.nosotros-card h3 {
+  color: #003b70; /* Conserva tu azul oscuro tipográfico original */
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
 
-    aparecer .8s ease forwards;
-
-
+.nosotros-card p {
+  color: #475569; /* Gris pizarra de alta lectura interna */
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 
-
-
-
-.nosotros-card:nth-child(2){
-
-    animation-delay:.2s;
-
+/* --- SECCIÓN SUCURSAL Y UBICACIÓN (MAPA) --- */
+.ubicacion {
+  padding: 5rem 6%;
+  background-color: #ffffff;
+  text-align: center;
 }
 
-
-
-.nosotros-card:nth-child(3){
-
-    animation-delay:.4s;
-
+.ubicacion h2 {
+  color: #003b70;
+  font-size: 2.3rem;
+  font-weight: 800;
 }
 
-/* UBICACION */
-
+.ubicacion h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #FFCC00;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
 
 .ubicacion-contenido {
+  display: flex;
+  gap: 40px;
+  align-items: stretch; /* Hace que el mapa y los datos midan lo mismo */
+  max-width: 1200px;
+  margin: 3.5rem auto 0 auto;
+}
 
+.mapa {
+  flex: 2;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
 
-    animation:
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 
-    aparecer 1s ease forwards;
+.datos-ubicacion {
+  flex: 1;
+  background: #f8fafc;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  border-top: 4px solid #0077C8;
+}
 
+.datos-ubicacion h3 {
+  color: #003b70;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.datos-ubicacion p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* ==========================================================================
+   ANIMACIONES OPTIMIZADAS (CUBIC-BEZIER PARA SUAVE RENDERIZADO)
+   ========================================================================== */
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes entrarIzquierda {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes entrarDerecha {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Activación de animaciones cinemáticas */
+.nosotros-hero div { animation: aparecer 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
+.historia-imagen { animation: entrarIzquierda 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
+.historia-texto { animation: entrarDerecha 0.8s cubic-bezier(0.215, 0.610, 0.355, 1) forwards; }
+.nosotros-card { opacity: 0; animation: aparecer 0.6s ease forwards; }
+
+.nosotros-card:nth-child(1) { animation-delay: 0.1s; }
+.nosotros-card:nth-child(2) { animation-delay: 0.25s; }
+.nosotros-card:nth-child(3) { animation-delay: 0.4s; }
+
+.ubicacion-contenido { animation: aparecer 0.8s ease forwards; }
+
+/* ==========================================================================
+   RESPONSIVIDAD MÓVIL
+   ========================================================================== */
+@media (max-width: 992px) {
+  .historia, .ubicacion-contenido {
+    flex-direction: column;
+    gap: 30px;
+    padding: 3.5rem 4%;
+  }
+  
+  .historia-texto, .datos-ubicacion {
+    text-align: center;
+    width: 100%;
+  }
+
+  .historia-texto h2::after {
+    margin: 10px auto 0 auto;
+  }
+
+  .mapa {
+    width: 100%;
+    height: 320px;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nosotros-hero h1 { font-size: 2.2rem; }
+  .nosotros-hero p { font-size: 1rem; }
+  .nosotros-info h2, .ubicacion h2 { font-size: 1.8rem; }
+}
+
+/* Microajustes UI para los nuevos iconos del bloque de contacto */
+.dato-contacto-block {
+  margin-bottom: 22px;
+}
+
+.dato-contacto-block p {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contacto-icono {
+  color: #0077C8; /* El azul de tu paleta unificado */
+  font-size: 1.1rem;
+  margin-top: 3px;
+  flex-shrink: 0; /* Evita que el icono se comprima con textos largos */
+}
+
+.contacto-subtext {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: block;
+  margin-top: 2px;
 }

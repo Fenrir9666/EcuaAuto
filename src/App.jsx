@@ -8,7 +8,8 @@ import Taller from "./components/Taller";
 import Footer from "./components/Footer";
 
 import Nosotros from "./pages/Nosotros";
-import ServiciosPage from "./pages/ServiciosPage"; // IMPORTANTE: Importa la nueva vista
+import ServiciosPage from "./pages/ServiciosPage";
+import PromocionesPage from "./components/PromocionesPage"; // ✅ Importa tu página de promociones
 
 function Inicio() {
   return (
@@ -28,7 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/servicios" element={<ServiciosPage />} /> {/* NUEVA RUTA INTEGRADA */}
+        <Route path="/servicios" element={<ServiciosPage />} />
+        <Route path="/promociones" element={<PromocionesPage />} /> {/* ✅ Nueva ruta */}
       </Routes>
     </BrowserRouter>
   );

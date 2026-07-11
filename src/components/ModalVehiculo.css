@@ -16,7 +16,9 @@
 
 /* Contenedor del contenido */
 .modal-contenido {
+  margin-top: 40px;
   background: white;
+
   width: 650px;
   max-width: 100%;
   max-height: 90vh; /* Mayor espacio de lectura útil */
@@ -43,7 +45,7 @@
 /* Botón cerrar */
 .modal-cerrar {
   position: absolute;
-  top: 20px;
+  top: 45px;
   right: 20px;
   width: 40px;
   height: 40px;

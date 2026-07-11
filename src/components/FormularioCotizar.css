@@ -1,0 +1,194 @@
+.cotizar-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  padding: 20px;
+}
+
+.cotizar-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  animation: deslizarEntrada 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 5px solid #FFCC00; /* Línea de acento amarillo de la marca */
+}
+
+@keyframes deslizarEntrada {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.cotizar-cerrar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.cotizar-cerrar:hover {
+  color: #000000;
+}
+
+/* Encabezado */
+.cotizar-header {
+  background-color: #f8fafc;
+  padding: 25px 30px 20px 30px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.cotizar-header h2 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.cotizar-auto-nombre {
+  font-size: 1.05rem;
+  color: #0077C8; /* Azul principal */
+  font-weight: 700;
+}
+
+/* Cuerpo del formulario */
+.cotizar-body {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.caja-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.caja-input.full-width {
+  grid-column: 1 / -1;
+}
+
+.caja-input label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.caja-input input,
+.caja-input select,
+.caja-input textarea {
+  background-color: #f1f3f5;
+  border: 1px solid transparent;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  color: #334155;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.caja-input input:focus,
+.caja-input select:focus,
+.caja-input textarea:focus {
+  background-color: #ffffff;
+  border-color: #FFCC00;
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.15);
+}
+
+/* Botón de Envió */
+.btn-confirmar-cotizacion {
+  background-color: #FFCC00;
+  color: #002855;
+  border: none;
+  width: calc(100% - 60px);
+  margin: 0 30px 30px 30px;
+  padding: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-confirmar-cotizacion:hover {
+  background-color: #E6B800;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 204, 0, 0.35);
+}
+
+/* Pantalla de Éxito */
+.cotizar-exito {
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.exito-check {
+  width: 60px;
+  height: 60px;
+  background-color: #f0fdf4;
+  color: #16a34a;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.cotizar-exito h2 {
+  font-size: 1.4rem;
+  color: #003b70;
+  margin-bottom: 12px;
+}
+
+.cotizar-exito p {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.btn-entendido {
+  margin-top: 15px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-entendido:hover {
+  background: #e2e8f0;
+}
+
+@media (max-width: 500px) {
+  .cotizar-body { grid-template-columns: 1fr; }
+  .cotizar-header, .cotizar-body { padding: 20px; }
+  .btn-confirmar-cotizacion { width: calc(100% - 40px); margin: 0 20px 20px 20px; }
+}
