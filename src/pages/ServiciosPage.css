@@ -1,0 +1,507 @@
+/* Contenedor general */
+.servicios-page-wrapper {
+  background-color: #f8fafc;
+  width: 100%;
+}
+
+/* ==========================================
+   ESTILOS DEL NUEVO BANNER HERO
+   ========================================== */
+.servicios-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 380px; /* Altura estilizada de gran impacto visual */
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  overflow: hidden;
+}
+
+/* Filtro translúcido oscuro sobre el banner para proteger la legibilidad */
+.servicios-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: 1;
+}
+
+.servicios-hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  text-align: left;
+}
+
+.servicios-hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.servicios-hero-content p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0.95;
+  letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   BARRA DE IMPACTO CON IMAGEN VISIBLE Y TEXTO A LA DERECHA
+   ========================================================================== */
+.servicios-intro-brandbar {
+  position: relative;
+  background-image: url('../assets/mantenimiento.png');
+  background-position: left center; /* SOLUCIÓN: Ancla la imagen a la izquierda para que el mecánico sea visible */
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6rem 6%; /* Incrementado para darle más altura y aire a la composición */
+  width: 100%;
+  min-height: 600px; /* SOLUCIÓN: Da más espacio vertical para revelar el asset completo */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Filtro oscuro equilibrado para rescatar los detalles del fondo */
+.brandbar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 100%); /* Gradiente que se oscurece a la derecha para proteger las letras */
+  z-index: 1;
+}
+
+.brandbar-content {
+  width: 100%;
+  max-width: 620px; /* Reducido ligeramente para forzar un bloque compacto a la derecha */
+  margin-left: auto; /* SOLUCIÓN: Empuja de forma automática todo el bloque de texto a la derecha */
+  text-align: right; /* SOLUCIÓN: Alinea los renglones al extremo derecho */
+  position: relative;
+  z-index: 2;
+}
+
+/* Título unificado */
+.brandbar-content h2 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 1.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* Párrafo unificado */
+.brandbar-content p {
+  color: #f1f5f9;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.brandbar-content .text-yellow {
+  color: #FFCC00;
+  font-weight: 800;
+}
+
+/* Responsividad para móviles (Vuelve al formato centrado ergonómico) */
+@media (max-width: 768px) {
+  .servicios-intro-brandbar {
+    padding: 4rem 6%;
+    min-height: auto;
+    background-position: center; /* En móviles se centra para aprovechar el espacio reducido */
+  }
+  
+  .brandbar-overlay {
+    background: rgba(0, 0, 0, 0.7); /* Filtro uniforme en celulares */
+  }
+
+  .brandbar-content {
+    max-width: 100%;
+    text-align: center; /* Centrado para facilitar la lectura en pantallas verticales */
+  }
+  
+  .brandbar-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .brandbar-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+
+
+/* ==========================================
+   CONTENEDOR DEL FORMULARIO
+   ========================================== */
+.servicios-form-container {
+  padding: 4rem 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.formulario-agendamiento {
+  background: #ffffff;
+  width: 100%;
+  max-width: 850px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #edf2f7;
+}
+
+.form-seccion {
+  border: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.form-seccion legend {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #003b70;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #f1f5f9;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.form-group-row,
+.form-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .form-group-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-box.full-width {
+  grid-column: 1 / -1;
+}
+
+.input-box label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.input-box input,
+.input-box select {
+  background-color: #f1f3f5;
+  border: 1px solid transparent;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  color: #334155;
+  outline: none;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+  background-color: #ffffff;
+  border-color: #FFCC00;
+  box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.15);
+}
+
+.aviso-legal-gm {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-top: 25px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 15px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn-enviar-formulario {
+  background-color: #FFCC00;
+  color: #002855;
+  border: none;
+  padding: 14px 45px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 204, 0, 0.2);
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.btn-enviar-formulario:hover {
+  background-color: #E6B800;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.35);
+}
+
+/* ==========================================
+   PANTALLA DE ÉXITO
+   ========================================== */
+.mensaje-exito-card {
+  background: white;
+  max-width: 600px;
+  padding: 45px 35px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #FFCC00;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.exito-icono {
+  width: 70px;
+  height: 70px;
+  background-color: #f0fdf4;
+  color: #16a34a;
+  font-size: 2.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.mensaje-exito-card h2 {
+  color: #003b70;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.mensaje-exito-card p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.btn-regresar {
+  margin-top: 20px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-regresar:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================
+   RESPONSIVIDAD MÓVIL
+   ========================================== */
+@media (max-width: 768px) {
+  .servicios-hero-banner {
+    height: 280px;
+  }
+  
+  .servicios-hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .servicios-hero-content p {
+    font-size: 1rem;
+  }
+
+  .servicios-intro-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 2rem 6%;
+  }
+
+  .formulario-agendamiento {
+    padding: 24px 16px;
+  }
+
+  .form-group-row, 
+  .form-group-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+
+/* ==========================================================================
+   NUEVA SECCIÓN DE VIDEO MULTIMEDIA (INTEGRACIÓN UI)
+   ========================================================================== */
+/* ==========================================================================
+   SECCIÓN DE VIDEO ASÍNCRONA (DISEÑO DIVIDIDO: VIDEO IZQ / TEXTO DER)
+   ========================================================================== */
+.servicios-split-section {
+  display: flex;
+  width: 100%;
+  min-height: 480px; /* Altura armoniosa inspirada en tu captura */
+  background-color: #ffffff; /* Fondo blanco para el bloque de texto */
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* --- BLOQUE IZQUIERDO: VIDEO --- */
+.split-video-side {
+  flex: 1;
+  position: relative;
+  min-height: 350px;
+  background-color: #000;
+}
+
+.split-video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.split-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15); /* Sutil oscurecimiento estético */
+  z-index: 2;
+}
+
+/* --- BLOQUE DERECHO: TEXTO INFORMATIVO --- */
+.split-text-side {
+  flex: 1;
+  padding: 5rem 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #f8fafc; /* Gris claro institucional que da contraste */
+}
+
+/* Tag superior amarillo de marca */
+.split-tag {
+  color: #0077C8; /* Azul principal */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.split-text-side h2 {
+  font-size: 2.2rem;
+  color: #003b70; /* Azul oscuro tipográfico corporativo */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+/* Línea decorativa amarilla obligatoria bajo el título */
+.split-text-side h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #FFCC00; /* Amarillo Chevrolet */
+  margin-top: 12px;
+  border-radius: 2px;
+}
+
+/* Párrafos descriptivos con interlineado óptimo */
+.split-text-side p {
+  color: #475569; /* Gris pizarra de alta lectura */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 540px;
+}
+
+.split-text-side .split-subtext {
+  font-size: 0.95rem;
+  color: #64748b; /* Tono gris secundario suavizado */
+  margin-bottom: 0;
+}
+
+/* Espaciado del formulario adaptado para que respire de forma armoniosa */
+.servicios-form-container {
+  padding: 4rem 6%;
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD MÓVIL
+   ========================================================================== */
+@media (max-width: 992px) {
+  .servicios-split-section {
+    flex-direction: column; /* Pasa a formato vertical en pantallas chicas */
+    min-height: auto;
+  }
+
+  .split-video-side {
+    width: 100%;
+    height: 320px; /* Altura controlada para el video en móviles */
+    min-height: 320px;
+  }
+
+  .split-text-side {
+    width: 100%;
+    padding: 3.5rem 6%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .split-text-side h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Centra la línea amarilla en la vista móvil */
+  .split-text-side h2::after {
+    margin: 12px auto 0 auto;
+  }
+}

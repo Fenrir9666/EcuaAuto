@@ -48,6 +48,12 @@
   color: var(--secondary-yellow);
 }
 
+/* Enlaces del menú (Heredan el color #444 del li y quitan el subrayado por defecto) */
+.footer-column li a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Redes sociales */
 .footer-social {
   text-align: center;
@@ -66,11 +72,21 @@
   justify-content: center;
   gap: 1.2rem;
   font-size: 1.3rem;
+}
+
+/* Enlaces contenedores de los iconos (Heredan el color #333) */
+.social-icons a {
   color: #333;
+  display: inline-flex;
+  text-decoration: none;
+}
+
+/* Animación y transición fluida para los elementos visuales SVG */
+.social-icons a svg {
   transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.social-icons svg:hover {
+.social-icons a:hover svg {
   color: var(--secondary-yellow);
   transform: scale(1.15);
 }

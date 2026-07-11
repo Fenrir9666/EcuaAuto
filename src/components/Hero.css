@@ -83,17 +83,23 @@
   gap: 0.5rem;
 }
 
-/* Animación del botón */
+/* Icono dentro del botón (Flecha básica) */
+.hero-btn::after {
+  content: "➝";
+  font-size: 1.2rem;
+  transition: transform 0.25s ease-in-out; /* Animación suave para la flecha */
+}
+
+/* Animación del botón en Hover */
 .hero-btn:hover {
   background-color: #E6B800; 
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
 }
 
-/* Icono dentro del botón */
-.hero-btn::after {
-  content: "➝"; /* flecha */
-  font-size: 1.2rem;
+/* La flecha se desplaza sutilmente a la derecha al hacer hover */
+.hero-btn:hover::after {
+  transform: translateX(4px);
 }
 
 /* Animación de entrada */

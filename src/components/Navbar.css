@@ -1,22 +1,21 @@
-.navbar-wrapper{
-    position: relative;
-    height: 91px;
-    
+.navbar-wrapper {
+  position: relative;
+  height: 91px;
 }
+
 /* Contenedor principal de la barra */
 .navbar-container {
-background: linear-gradient(90deg, #0077C8 0%, #005fa3 100%);
-padding: 0.5rem 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:10000;
-box-shadow:0 4px 12px rgba(0,0,0,.12);
-
+  background: linear-gradient(90deg, #0077C8 0%, #005fa3 100%);
+  padding: 0.5rem 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 /* Contenedor del logotipo corporativo */
@@ -89,7 +88,7 @@ box-shadow:0 4px 12px rgba(0,0,0,.12);
   transform: scaleY(0.85) translateY(1px);
 }
 
-/* Línea animada inferior */
+/* Línea animada inferior (Por defecto oculta en el centro) */
 .navbar-item::after {
   content: '';
   position: absolute;
@@ -97,114 +96,117 @@ box-shadow:0 4px 12px rgba(0,0,0,.12);
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: #FFFFFF;
+  background-color: #FFCC00;
   transition: width 0.35s ease, left 0.35s ease;
 }
 
+/* Despliega la línea al hacer hover */
 .navbar-item:hover::after {
   width: 100%;
   left: 0;
 }
 
-/* --- ESTADO ACTIVO --- */
+/* --- SOLUCIÓN ESTADO ACTIVO --- */
+/* Forzamos a que el texto brille en amarillo cuando el menú está abierto */
 .navbar-item.active .navbar-text {
-  color: #FFCC00;
+  color: #FFFFFF;
   opacity: 1;
 }
 
+
+/* SOLUCIÓN: Forzamos que la línea se mantenga expandida al 100% fija si tiene la clase active */
 .navbar-item.active::after {
   width: 100%;
   left: 0;
   background-color: #FFCC00;
 }
 
-/* --- RESPONSIVIDAD --- */
-.navbar-toggle {
-  display: none;
-  font-size: 1.5rem;
-  color: #FFFFFF;
+/* Tarjeta desplegable de Nosotros (UI Optimizada) */
+.nosotros-dropdown {
+  position: fixed;
+  top: 85px;
+  right: 6%;
+  background: white;
+  padding: 12px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 99999;
+  border-radius: 0 0 12px 12px;
+  border-top: 3px solid #FFCC00;
+  animation: dropFade 0.25s ease-out;
+}
+
+.nosotros-dropdown button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
+  color: #334155;
+  padding: 6px 12px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
 }
 
-@media (max-width: 768px){
-
-.navbar-container{
-
-    padding:10px 15px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
+.nosotros-dropdown button:hover {
+  color: #0077C8;
+  transform: translateX(2px);
 }
 
-.navbar-logo-wrapper{
-
-    height:50px;
-
+/* Animación de entrada para el dropdown */
+@keyframes dropFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.navbar-menu{
+/* --- RESPONSIVIDAD --- */
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    height: 70px;
+  }
 
-    display:flex;
+  .navbar-container {
+    padding: 10px 15px;
+    height: 70px;
+  }
 
-    gap:15px;
+  .navbar-logo-wrapper {
+    height: 46px;
+  }
 
-    overflow-x:auto;
+  .navbar-menu {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
 
-    scrollbar-width:none;
+  .navbar-menu::-webkit-scrollbar {
+    display: none;
+  }
 
-}
+  .navbar-item {
+    flex-shrink: 0;
+    padding: 0.4rem 0;
+  }
 
-.navbar-menu::-webkit-scrollbar{
+  .navbar-text {
+    font-size: 13px;
+  }
 
-    display:none;
+  .navbar-arrow {
+    font-size: 10px;
+  }
 
-}
-
-.navbar-item{
-
-    flex-shrink:0;
-
-}
-
-.navbar-text{
-
-    font-size:13px;
-
-}
-
-.navbar-arrow{
-
-    font-size:10px;
-
-}
-
-}
-
-.nosotros-dropdown{
-position:fixed;
-top:91px;
-right:6%;
-background:white;
-padding:15px 25px;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-z-index:99999;
-
-}
-
-.nosotros-dropdown button{
-border:none;
-background:none;
-font-size:15px;
-cursor:pointer;
-color:#333;
-
-}
-
-.nosotros-dropdown button:hover{
-color:#0077C8;
-
+  .nosotros-dropdown {
+    top: 70px;
+    right: 15px;
+    width: auto;
+    border-radius: 8px;
+  }
 }

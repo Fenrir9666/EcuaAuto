@@ -1,86 +1,144 @@
+/* ==========================================================================
+   SECCIÓN TALLER - ECUAAUTO CHEVROLET (UI/UX OPTIMIZADA)
+   ========================================================================== */
+
 .taller-section {
   display: flex;
-  flex-wrap: wrap;
-  background-color: var(--primary-blue);
-  color: var(--white);
+  width: 100%;
+  min-height: 550px;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Imagen lateral */
+/* Columna de la Imagen Lateral */
 .taller-image {
-  flex: 1 1 500px;
-  min-height: 350px;
-  background-size: cover;
+  flex: 1;
   background-position: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  animation: fadeIn 1s ease-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 350px;
 }
 
-/* Contenido de texto */
+/* Sutil gradiente oscuro sobre la imagen para suavizar el contraste lateral */
+.taller-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* Columna del Contenido e Información */
 .taller-content {
-  flex: 1 1 500px;
-  padding: 5rem 8%;
+  flex: 1;
+  padding: 5rem 6%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  animation: fadeInUp 1s ease-out;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #f8fafc; /* Fondo gris claro institucional */
 }
 
+/* Títulos principales con el azul corporativo oscuro */
 .taller-content h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-yellow);
+  font-size: 2.3rem;
+  color: #003b70; /* Azul oscuro Chevrolet */
   font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+  position: relative;
 }
 
+/* Línea decorativa inferior amarilla bajo el título */
+.taller-content h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #FFCC00; /* Amarillo Chevrolet */
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+/* Párrafos descriptivos con excelente interlineado de lectura */
 .taller-content p {
-  color: #e2e8f0; /* gris claro para contraste */
+  color: #475569; /* Gris pizarra de alta legibilidad */
+  font-size: 1.05rem;
   line-height: 1.6;
+  margin-bottom: 1.2rem;
+  max-width: 520px;
+}
+
+/* El último párrafo conserva un margen inferior mayor antes del botón */
+.taller-content p:last-of-type {
   margin-bottom: 2rem;
-  font-size: 1rem;
 }
 
-/* Botón */
+/* Botón de Llamado a la Acción (CTA) Rediseñado en Amarillo */
 .taller-btn {
-  align-self: flex-start;
-  background-color: var(--secondary-yellow);
-  color: var(--primary-blue);
+  background-color: #FFCC00; /* Amarillo institucional */
+  color: #002855; /* Azul marino de alto contraste */
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
   font-weight: 700;
+  border-radius: 50px; /* Estilo píldora idéntico al Hero y Catálogo */
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(255, 204, 0, 0.25);
+  transition: background-color 0.25s ease-in-out, transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
 }
 
+/* Comportamiento interactivo al pasar el mouse (Hover) */
 .taller-btn:hover {
-  background-color: var(--white);
-  color: var(--primary-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background-color: #E6B800; /* Variación sutil más oscura del amarillo */
+  transform: translateY(-2px); /* Pequeña elevación UX */
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+/* Retroalimentación táctil activa */
+.taller-btn:active {
+  transform: translateY(0);
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* ==========================================================================
+   RESPONSIVIDAD Y ADAPTACIÓN MÓVIL
+   ========================================================================== */
 
-/* Responsividad */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .taller-section {
-    flex-direction: column;
+    flex-direction: column; /* Cambia a disposición vertical en tabletas y móviles */
+    min-height: auto;
   }
+
+  .taller-image {
+    width: 100%;
+    height: 300px;
+    min-height: 300px;
+  }
+
   .taller-content {
-    padding: 2rem;
+    width: 100%;
+    padding: 3rem 6%;
+    align-items: center;
     text-align: center;
   }
+
+  .taller-content h2 {
+    font-size: 1.9rem;
+  }
+
+  /* Centra la línea decorativa amarilla en la vista móvil */
+  .taller-content h2::after {
+    margin: 10px auto 0 auto;
+  }
+
   .taller-btn {
-    align-self: center;
+    width: 100%;
+    max-width: 280px; /* Botón de ancho completo ergonómico en celulares */
   }
 }

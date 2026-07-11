@@ -2,35 +2,51 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import logoChevrolet from '../assets/logo1.png';
 import Vehiculos from './Vehiculos'; // Importamos tu componente de vehículos
+import Promo from './Promo'; // Importamos tu componente Banner de Promociones
 import './Navbar.css'; 
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const [mostrarNosotros, setMostrarNosotros] = useState(false);
-  // Estado para controlar si el menú de vehículos está abierto o cerrado
   const [mostrarVehiculos, setMostrarVehiculos] = useState(false);
+  // Nuevo estado para controlar de forma inteligente el despliegue del Banner Promo
+  const [mostrarPromociones, setMostrarPromociones] = useState(false);
  
-
   const navItems = [
     { label: 'Comprar', hasDropdown: true },
     { label: 'Vehículos', hasDropdown: true },
-    { label: 'Posventa', hasDropdown: true },
+    { label: 'Promociones', hasDropdown: true }, // MODIFICADO: Reemplazado 'Posventa' por 'Promociones'
     { label: 'Acerca de Nosotros', hasDropdown: true }
   ];
 
-  // Función para capturar el clic en los elementos del menú
+  // Función para capturar el clic en los elementos del menú y alternar estados de manera inteligente
   const manejarClicMenu = (label) => {
     if (label === 'Vehículos') {
-      // Intercambia el estado (si está abierto lo cierra, si está cerrado lo abre)
       setMostrarVehiculos(!mostrarVehiculos);
-    }
-
-    if(label === "Acerca de Nosotros"){
-
+      setMostrarNosotros(false);
+      setMostrarPromociones(false); // Cierra Promociones si abres Vehículos
+    } else if (label === 'Acerca de Nosotros') {
       setMostrarNosotros(!mostrarNosotros);
-
+      setMostrarVehiculos(false);
+      setMostrarPromociones(false); // Cierra Promociones si abres Nosotros
+    } else if (label === 'Promociones') {
+      setMostrarPromociones(!mostrarPromociones); // Alterna el banner promocional en pantalla
+      setMostrarVehiculos(false); // Cierra Vehículos para que no se superpongan
+      setMostrarNosotros(false); // Cierra Nosotros
+    } else {
+      setMostrarVehiculos(false);
+      setMostrarNosotros(false);
+      setMostrarPromociones(false);
     }
+  };
+
+  // Función helper para determinar qué flecha mostrar de forma dinámica
+  const obtenerFlecha = (label) => {
+    if (label === 'Vehículos') return mostrarVehiculos ? '▲' : '▼';
+    if (label === 'Acerca de Nosotros') return mostrarNosotros ? '▲' : '▼';
+    if (label === 'Promociones') return mostrarPromociones ? '▲' : '▼'; // Integración en la UI
+    return '▼';
   };
 
   return (
@@ -43,54 +59,62 @@ const Navbar = () => {
             src={logoChevrolet} 
             alt="EcuaAuto Somos Chevrolet" 
             className="navbar-logo-img" 
-            onClick={() => navigate("/")}
+            onClick={() => {
+              setMostrarVehiculos(false);
+              setMostrarNosotros(false);
+              setMostrarPromociones(false);
+              navigate("/");
+            }}
           />
         </div>
 
         {/* Sección de los Enlaces de Navegación */}
         <div className="navbar-menu">
-          {navItems.map((item, idx) => (
-            <div 
-              key={idx} 
-              className="navbar-item"
-              onClick={() => manejarClicMenu(item.label)} // Agregamos el evento de clic
-              style={{ cursor: item.label === 'Vehículos' ? 'pointer' : 'default' }} // Cambia el cursor a manito en vehículos
-            >
-              <span className="navbar-text">
-                {item.label}
-              </span>
-              
-              {item.hasDropdown && (
-                <span className="navbar-arrow">
-                  {/* Si es Vehículos y está abierto, muestra la flecha hacia arriba ▲, si no ▼ */}
-                  {item.label === 'Vehículos' && mostrarVehiculos ? '▲' : '▼'}
+          {navItems.map((item, idx) => {
+            // Evaluamos si el item actual está abierto en React para pintar la línea amarilla fija
+            const estaAbierto = 
+              (item.label === 'Vehículos' && mostrarVehiculos) ||
+              (item.label === 'Acerca de Nosotros' && mostrarNosotros) ||
+              (item.label === 'Promociones' && mostrarPromociones); // Línea amarilla integrada aquí
+
+            return (
+              <div 
+                key={idx} 
+                className={`navbar-item ${estaAbierto ? 'active' : ''}`}
+                onClick={() => manejarClicMenu(item.label)}
+                style={{ cursor: 'pointer' }}
+              >
+                <span className="navbar-text">
+                  {item.label}
                 </span>
-              )}
-            </div>
-          ))}
+                
+                {item.hasDropdown && (
+                  <span className="navbar-arrow">
+                    {obtenerFlecha(item.label)}
+                  </span>
+                )}
+              </div>
+            );
+          })}
         </div>
       </nav>
 
-      {/* Renderizado Condicional: Si mostrarVehiculos es true, se despliega justo debajo del navbar */}
+      {/* Renderizado Condicional de Submenús justo debajo del Navbar */}
       {mostrarVehiculos && <Vehiculos />}
 
-      {
-mostrarNosotros && (
+      {/* SOLUCIÓN: Si activas Promociones en el menú, el componente Promo se inyecta directamente aquí de forma visible */}
+      {mostrarPromociones && <Promo />}
 
-<div className="nosotros-dropdown">
-
-
-<button
-onClick={() => navigate("/nosotros")}
->
-Acerca de Nosotros
-</button>
-
-
-</div>
-
-)
-}
+      {mostrarNosotros && (
+        <div className="nosotros-dropdown">
+          <button onClick={() => {
+            setMostrarNosotros(false);
+            navigate("/nosotros");
+          }}>
+            Acerca de Nosotros
+          </button>
+        </div>
+      )}
     </div>
   );
 };

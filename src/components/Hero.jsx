@@ -20,12 +20,13 @@ const Hero = () => {
 
       <div className="hero-overlay"></div>
       
-      <div className="hero-content">
+      {/* Contenedor principal con rol de sección */}
+      <div className="hero-content" role="region" aria-label="Introducción principal">
         <span className="hero-tag">Chevrolet</span>
         <h1 className="hero-title">
           El corazón de América
         </h1>
-        <button className="hero-btn">
+        <button className="hero-btn" aria-label="Descubrir más sobre Chevrolet">
           Descubrir Más
         </button>
       </div>

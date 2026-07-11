@@ -15,46 +15,46 @@ function Footer() {
         <div className="footer-column">
           <h4>COMPRAR</h4>
           <ul>
-            <li>Promociones</li>
-            <li>Exonerados</li>
-            <li>Flotas</li>
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="#exonerados">Exonerados</a></li>
+            <li><a href="#flotas">Flotas</a></li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h4>VEHÍCULOS</h4>
           <ul>
-            <li>Todos los modelos</li>
-            <li>SUV & Crossovers</li>
-            <li>Camionetas</li>
-            <li>Vans</li>
-            <li>Eléctricos</li>
-            <li>Híbridos</li>
+            <li><a href="#modelos">Todos los modelos</a></li>
+            <li><a href="#suv">SUV & Crossovers</a></li>
+            <li><a href="#camionetas">Camionetas</a></li>
+            <li><a href="#vans">Vans</a></li>
+            <li><a href="#electricos">Eléctricos</a></li>
+            <li><a href="#hibridos">Híbridos</a></li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h4>POSVENTA</h4>
           <ul>
-            <li>Servicios</li>
-            <li>Agendamiento de servicios</li>
-            <li>Accesorios</li>
-            <li>Repuestos</li>
-            <li>Garantía</li>
-            <li>OnStar</li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#agendamiento">Agendamiento de servicios</a></li>
+            <li><a href="#accesorios">Accesorios</a></li>
+            <li><a href="#repuestos">Repuestos</a></li>
+            <li><a href="#garantia">Garantía</a></li>
+            <li><a href="#onstar">OnStar</a></li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h4>SOBRE NOSOTROS</h4>
           <ul>
-            <li>Quiénes somos</li>
-            <li>Contáctanos</li>
-            <li>Ubicación</li>
-            <li>Trabaja con nosotros</li>
-            <li>Política de Datos</li>
-            <li>Aspectos Legales</li>
-            <li>Cookies</li>
+            <li><a href="#quienes-somos">Quiénes somos</a></li>
+            <li><a href="#contactanos">Contáctanos</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#trabaja-con-nosotros">Trabaja con nosotros</a></li>
+            <li><a href="#politica-datos">Política de Datos</a></li>
+            <li><a href="#aspectos-legales">Aspectos Legales</a></li>
+            <li><a href="#cookies">Cookies</a></li>
           </ul>
         </div>
       </div>
@@ -62,11 +62,21 @@ function Footer() {
       <div className="footer-social">
         <h5>NUESTRAS REDES</h5>
         <div className="social-icons">
-          <FaFacebookF />
-          <FaTwitter />
-          <FaYoutube />
-          <FaInstagram />
-          <FaTiktok />
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <FaFacebookF />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <FaTwitter />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <FaYoutube />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <FaInstagram />
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <FaTiktok />
+          </a>
         </div>
       </div>
 

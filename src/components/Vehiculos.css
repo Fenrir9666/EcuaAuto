@@ -1,82 +1,165 @@
-.vehiculos-desplegable{
-    position:fixed;
-    top:91px;
-    left:0;
-    width:100%;
-    background:#fff;
-    z-index:9999;
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
-    border-top:1px solid #ddd;
-
+.vehiculos-desplegable {
+  position: fixed;
+  top: 91px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  border-top: 1px solid #ddd;
 }
 
-.vehiculos-tabs{
-    display:flex;
-    gap:30px;
-
-    background:#efefef;
-
-    padding:15px 6%;
+.vehiculos-tabs {
+  display: flex;
+  gap: 30px;
+  background: #efefef;
+  padding: 15px 6%;
 }
 
-.vehiculos-tab{
-    background:none;
-    border:none;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    color:#444;
+.vehiculos-tab {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
 }
 
-.vehiculos-tab.activo{
-
-    font-weight:bold;
-
-    border-bottom:3px solid black;
+.vehiculos-tab:hover {
+  color: #0077C8; /* Feedback visual sutil en azul al pasar el mouse */
 }
 
-.vehiculos-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
-    padding:35px 6%;
+.vehiculos-tab.activo {
+  font-weight: 700;
+  color: #000;
+  border-bottom: 3px solid #0077C8; /* Cambiado a tu azul principal para consistencia */
 }
 
-.vehiculo-card{
-
-    cursor:pointer;
-
-    transition:.3s;
+/* Rejilla de vehículos */
+.vehiculos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 35px 6%;
 }
 
-.vehiculo-card:hover{
-
-    transform:translateY(-5px);
-
+/* Tarjeta de Vehículo con Borde Interactivo */
+.vehiculo-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  box-sizing: border-box;
+  /* IMPORTANTE: Borde transparente base para que al hacer hover la tarjeta no "tiemble" */
+  border: 2px solid transparent; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.vehiculo-card img{
-
-    width:100%;
-
-    max-width:280px;
-
+/* INTEGRADO: Al hacer hover se eleva la tarjeta y el borde se pinta de amarillo */
+.vehiculo-card:hover {
+  transform: translateY(-6px);
+  border-color: #FFCC00; /* Color amarillo secundario Chevrolet */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
-.vehiculo-card h3{
-
-    margin-top:15px;
-
+.vehiculo-card-media {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.vehiculo-card p{
+.vehiculo-card img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
 
-    color:#666;
+/* Sutil zoom a la foto del auto al pasar el cursor sobre la tarjeta */
+.vehiculo-card:hover img {
+  transform: scale(1.04);
+}
 
+.vehiculo-card h3 {
+  margin: 10px 0 6px 0;
+  font-size: 1.2rem;
+  color: #003b70; /* Azul oscuro corporativo */
+  font-weight: 700;
+}
+
+.vehiculo-card p {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  min-height: 40px; /* Evita que descripciones cortas desalineen los botones */
+}
+
+/* REDISEÑO COMPLETO: Botón Conocer Más Modernizado e Institucional */
+.btn-conocer {
+  background-color: #FFCC00; /* Fondo amarillo de marca */
+  color: #002855; /* Texto azul oscuro de alto contraste */
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 50px; /* Estilo píldora moderno a juego con el Hero */
+  cursor: pointer;
+  width: 100%; /* Ocupa el ancho para dar estabilidad visual a la tarjeta */
+  max-width: 180px;
+  margin: 0 auto;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.15);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-conocer:hover {
+  background-color: #E6B800; /* Amarillo un poco más oscuro al presionar */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255, 204, 0, 0.3);
+}
+
+/* Mensaje alternativo si no hay autos */
+.vehiculos-vacio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsividad para tabletas y móviles */
+@media (max-width: 992px) {
+  .vehiculos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehiculos-desplegable {
+    top: 70px; /* Sincronizado con la altura reducida del navbar móvil */
+  }
+  
+  .vehiculos-tabs {
+    gap: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  
+  .vehiculos-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vehiculos-grid {
+    grid-template-columns: 1fr;
+    padding: 20px 4%;
+  }
 }
