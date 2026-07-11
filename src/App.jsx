@@ -9,7 +9,9 @@ import Footer from "./components/Footer";
 
 import Nosotros from "./pages/Nosotros";
 import ServiciosPage from "./pages/ServiciosPage";
-import PromocionesPage from "./components/PromocionesPage"; // ✅ Importa tu página de promociones
+import PromocionesPage from "./components/PromocionesPage"; 
+import EquipoPage from "./components/EquipoPage"; // ✅ Cambiado a components
+
 
 function Inicio() {
   return (
@@ -30,7 +32,8 @@ function App() {
         <Route path="/" element={<Inicio />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/servicios" element={<ServiciosPage />} />
-        <Route path="/promociones" element={<PromocionesPage />} /> {/* ✅ Nueva ruta */}
+        <Route path="/promociones" element={<PromocionesPage />} /> 
+        <Route path="/equipo" element={<EquipoPage />} /> {/* ✅ NUEVA RUTA */}
       </Routes>
     </BrowserRouter>
   );

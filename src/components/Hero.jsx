@@ -1,36 +1,38 @@
-import React from 'react';
-import './Hero.css'; 
-// Importación con el nombre exacto de tu archivo y la ruta correcta hacia assets
-import videoChevrolet from '../assets/chevro.mp4'; 
+import React from "react";
+import { useNavigate } from "react-router-dom"; // 🚀 1. Importa el hook de navegación
+import videoHero from "../assets/chevro.mp4";
+import "./Hero.css";
 
 const Hero = () => {
+  const navigate = useNavigate(); // 🚀 2. Inicializa la función de redirección
+
   return (
-    <header className="hero-container">
-      {/* El video se renderizará automáticamente gracias a este tag */}
-      <video 
-        className="hero-video-bg" 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-      >
-        <source src={videoChevrolet} type="video/mp4" />
-        Tu navegador no soporta videos de fondo.
+    <section className="hero-container" role="region" aria-label="Introducción principal">
+      {/* Video de fondo */}
+      <video className="hero-video-bg" autoPlay loop muted playsInline>
+        <source src={videoHero} type="video/mp4" />
+        Tu navegador no soporta videos integrados.
       </video>
 
+      {/* Capa de degradado oscuro */}
       <div className="hero-overlay"></div>
-      
-      {/* Contenedor principal con rol de sección */}
-      <div className="hero-content" role="region" aria-label="Introducción principal">
-        <span className="hero-tag">Chevrolet</span>
-        <h1 className="hero-title">
-          El corazón de América
-        </h1>
-        <button className="hero-btn" aria-label="Descubrir más sobre Chevrolet">
-          Descubrir Más
-        </button>
+
+      {/* Contenido textual del Banner */}
+      <div className="hero-content">
+        <span className="hero-tag">CHEVROLET</span>
+        <h1 className="hero-title">El corazón de América</h1>
+        
+       {/* 🛠️ Modifica únicamente la línea del botón en tu Hero.jsx: */}
+<button 
+  className="hero-btn"
+  onClick={() => navigate("/nosotros")} 
+  aria-label="Conocer más acerca de nuestra historia y concesionario"
+>
+  Descubrir Más
+</button>
+
       </div>
-    </header>
+    </section>
   );
 };
 

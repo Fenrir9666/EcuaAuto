@@ -123,17 +123,21 @@
 
 /* Tarjeta desplegable de Nosotros (UI Optimizada) */
 .nosotros-dropdown {
-  position: fixed;
-  top: 85px;
-  right: 6%;
-  background: white;
-  padding: 12px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  z-index: 99999;
-  border-radius: 0 0 12px 12px;
-  border-top: 3px solid #FFCC00;
-  animation: dropFade 0.25s ease-out;
+  position: absolute;
+  top: 100%;       /* Se posiciona exactamente debajo del texto */
+  left: 50%;       /* Se mueve al centro del botón padre */
+  transform: translateX(-50%); /* Ajuste perfecto para un centrado matemático exacto */
+  margin-top: 10px; /* Separación sutil del borde superior */
+  
+  /* Mantén aquí tus estilos visuales actuales */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  min-width: 160px; /* Asegura un ancho mínimo cómodo para el botón */
+  z-index: 100;
 }
+
 
 .nosotros-dropdown button {
   border: none;

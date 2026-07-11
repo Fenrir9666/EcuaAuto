@@ -85,7 +85,7 @@
 
 /* Icono dentro del botón (Flecha básica) */
 .hero-btn::after {
-  content: "➝";
+  content: "";
   font-size: 1.2rem;
   transition: transform 0.25s ease-in-out; /* Animación suave para la flecha */
 }

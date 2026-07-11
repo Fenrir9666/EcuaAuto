@@ -1,0 +1,205 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.equipo-page-wrapper {
+  background-color: #0b0f19; /* Fondo oscuro profundo a juego con el video */
+  padding-bottom: 5rem;
+}
+
+/* --- SECCIÓN HERO CON VIDEO --- */
+.equipo-hero-banner-video {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipo-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.equipo-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); 
+  z-index: 2;
+}
+
+.equipo-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.texto-matriz-digital {
+  font-family: 'Share Tech Mono', monospace;
+  color: #39ff14;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.6), 0 0 20px rgba(57, 255, 20, 0.4);
+  margin: 0;
+}
+
+.subtexto-matriz-digital {
+  font-family: 'Share Tech Mono', monospace;
+  color: #a7f3d0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+/* --- CONTENEDOR Y REJILLA --- */
+.equipo-container {
+  padding: 4rem 6%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* --- NUEVAS TARJETA ESTILO DIGITAL OSCURO --- */
+.equipo-card-tech {
+  background: #111827; /* Gris oscuro mate */
+  border: 1px solid #1f2937;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Borde superior con el azul de tu marca EcuaAuto */
+.equipo-card-tech::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #0077C8;
+  transition: 0.3s;
+}
+
+/* Interacción: Resplandor verde neón en hover */
+.equipo-card-tech:hover {
+  transform: translateY(-8px);
+  border-color: #39ff14;
+  box-shadow: 0 15px 30px rgba(57, 255, 20, 0.15);
+}
+
+.equipo-card-tech:hover::before {
+  background: #39ff14; /* La barra superior cambia a verde neón */
+}
+
+/* --- CONTENEDOR DE LA FOTO --- */
+.avatar-foto-wrapper {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #0077C8, #003b70); /* Degradado inicial azul */
+  box-shadow: 0 0 15px rgba(0, 119, 200, 0.3);
+  transition: 0.4s;
+}
+
+/* Al pasar el cursor sobre la tarjeta, la foto se ilumina en verde neón */
+.equipo-card-tech:hover .avatar-foto-wrapper {
+  background: linear-gradient(135deg, #39ff14, #059669);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+}
+
+.avatar-foto-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #1f2937;
+  border: 3px solid #111827; /* Línea de separación limpia */
+}
+
+/* --- TEXTOS INTERNOS --- */
+.dev-nombre-tech {
+  color: #f8fafc; /* Texto blanco limpio */
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.equipo-rol-tech {
+  font-family: 'Share Tech Mono', monospace;
+  color: #39ff14; /* Rol en verde neón de código */
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.dev-desc-tech {
+  color: #94a3b8; /* Gris intermedio para excelente contraste de lectura */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  min-height: 75px;
+}
+
+/* --- ETIQUETAS DE TECNOLOGÍAS DIGITALES --- */
+.tecnologias-tags-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 25px 0;
+}
+
+.tech-tag-digital {
+  font-family: 'Share Tech Mono', monospace;
+  background: #1f2937;
+  color: #e2e8f0;
+  border: 1px solid #374151;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  transition: 0.2s;
+}
+
+.equipo-card-tech:hover .tech-tag-digital {
+  border-color: rgba(57, 255, 20, 0.3);
+  color: #39ff14;
+}
+
+/* --- ICONOS SOCIALES --- */
+.equipo-social-tech {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 1.4rem;
+}
+
+.equipo-social-tech a {
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.equipo-social-tech a:hover {
+  color: #39ff14;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.6);
+}
