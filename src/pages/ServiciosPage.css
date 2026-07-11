@@ -60,7 +60,7 @@
    ========================================================================== */
 .servicios-intro-brandbar {
   position: relative;
-  background-image: url('../assets/somos.png');
+  background-image: url('../assets/mantenimiento.png');
   background-position: left center; /* SOLUCIÓN: Ancla la imagen a la izquierda para que el mecánico sea visible */
   background-repeat: no-repeat;
   background-size: cover;
